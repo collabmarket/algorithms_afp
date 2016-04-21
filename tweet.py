@@ -25,7 +25,7 @@ afps = ['Cuprum', 'Habitat', 'Modelo']
 fecha = datetime.now().strftime('%Y-%M-%d')
 
 for afp in afps:
-    msg = ('Estrategia %s fecha %s\n'
+    msg = ('Estrategia afp %s fecha %s\n'
        'https://github.com/collabmarket/algorithms_afp'%(afp,fecha)
       )
     tweet = api.update_with_media('A-E_%s.png'%afp, status=msg)
