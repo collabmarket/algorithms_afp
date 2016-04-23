@@ -32,6 +32,6 @@ for afp in afps:
     time.sleep(20)
 
 msg = 'Riesgo Sistemico fecha %s'%(fecha)
-tweet = api.update_with_media('result/SystemicRisk.png'%afp, status=msg)
+tweet = api.update_with_media('result/SystemicRisk.png', status=msg)
 
 print "[INFO]--" + datetime.now().strftime('%Y-%M-%d %H:%M:%S') + "--" + "tweet" + "--" + "DONE"
