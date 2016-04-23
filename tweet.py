@@ -17,18 +17,21 @@ auth.secure = True
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
-print(api.me().name)
+print "[CHECK]--" + "Ready: " + api.me().name
 
 #tweet = api.update_status(status='Updating via Tweepy!')
 
-afps = ['Cuprum', 'Habitat', 'Modelo']
+afps = ['CUPRUM', 'HABITAT', 'MODELO']
 fecha = datetime.now().strftime('%Y-%M-%d')
 
 for afp in afps:
     msg = ('Estrategia afp %s fecha %s\n'
        'https://github.com/collabmarket/algorithms_afp'%(afp,fecha)
       )
-    tweet = api.update_with_media('A-E_%s.png'%afp, status=msg)
+    tweet = api.update_with_media('result/A-E_%s.png'%afp, status=msg)
     time.sleep(20)
+
+msg = 'Riesgo Sistemico fecha %s'%(fecha)
+tweet = api.update_with_media('result/SystemicRisk.png'%afp, status=msg)
 
 print "[INFO]--" + datetime.now().strftime('%Y-%M-%d %H:%M:%S') + "--" + "tweet" + "--" + "DONE"
