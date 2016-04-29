@@ -2,7 +2,7 @@ import tweepy
 import time
 from datetime import datetime
 
-print "[INFO]--" + datetime.now().strftime('%Y-%M-%d %H:%M:%S') + "--" + "tweet" + "--" + "INIT"
+print "[INFO]--" + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "--" + "tweet" + "--" + "INIT"
 
 with open('key.txt', 'rU') as f:
     token = [line.rstrip() for line in f]
@@ -22,7 +22,7 @@ print "[CHECK]--" + "Ready: " + api.me().name
 #tweet = api.update_status(status='Updating via Tweepy!')
 
 afps = ['CUPRUM', 'HABITAT', 'MODELO']
-fecha = datetime.now().strftime('%Y-%M-%d')
+fecha = datetime.now().strftime('%Y-%m-%d')
 
 for afp in afps:
     msg = ('Estrategia afp %s fecha %s\n'
@@ -34,4 +34,4 @@ for afp in afps:
 msg = 'Riesgo Sistemico fecha %s'%(fecha)
 tweet = api.update_with_media('result/SystemicRisk.png', status=msg)
 
-print "[INFO]--" + datetime.now().strftime('%Y-%M-%d %H:%M:%S') + "--" + "tweet" + "--" + "DONE"
+print "[INFO]--" + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "--" + "tweet" + "--" + "DONE"
