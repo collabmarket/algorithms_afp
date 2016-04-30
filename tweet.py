@@ -28,10 +28,14 @@ for afp in afps:
     msg = ('Estrategia afp %s fecha %s\n'
        'https://github.com/collabmarket/algorithms_afp'%(afp,fecha)
       )
-    tweet = api.update_with_media('result/A-E_%s.png'%afp, status=msg)
+    images = ('result/A-E_%s.png'%afp, 'result/A-E_%s_table.png'%afp)
+    media_ids = [api.media_upload(i).media_id_string for i in images]
+    tweet = api.update_status(status=msg, media_ids=media_ids)
     time.sleep(20)
 
 msg = 'Riesgo Sistemico fecha %s'%(fecha)
-tweet = api.update_with_media('result/SystemicRisk.png', status=msg)
+images = ['result/SystemicRisk.png']
+media_ids = [api.media_upload(i).media_id_string for i in images]
+tweet = api.update_status(status=msg, media_ids=media_ids)
 
 print "[INFO]--" + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "--" + "tweet" + "--" + "DONE"
