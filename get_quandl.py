@@ -2,7 +2,7 @@ import pandas_datareader.data as web
 import Quandl
 from datetime import datetime
 
-print "[INFO]--" + datetime.now().strftime('%Y-%M-%d %H:%M:%S') + "--" + "get_quandl" + "--" + "INIT"
+print "[INFO]--" + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "--" + "get_quandl" + "--" + "INIT"
 
 with open('token.txt', 'rU') as f:
     token = f.readline().rstrip('\n')
@@ -25,4 +25,4 @@ usdclp.to_csv(outdir + 'usdclp.csv')
 money.to_csv(outdir + 'money.csv')
 debt.to_csv(outdir + 'debt.csv')
 
-print "[INFO]--" + datetime.now().strftime('%Y-%M-%d %H:%M:%S') + "--" + "get_quandl" + "--" + "DONE"
+print "[INFO]--" + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "--" + "get_quandl" + "--" + "DONE"
