@@ -22,6 +22,7 @@ print "[CHECK]--" + "Ready: " + api.me().name
 #tweet = api.update_status(status='Updating via Tweepy!')
 
 afps = ['CUPRUM', 'HABITAT', 'MODELO']
+# Faltan CAPITAL, PLANVITAL, PROVIDA
 fecha = datetime.now().strftime('%Y-%m-%d')
 
 for afp in afps:
