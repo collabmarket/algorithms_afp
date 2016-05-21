@@ -18,11 +18,13 @@ usdclp = Quandl.get("CURRFX/USDCLP", authtoken=token)
 
 # Guarda datos
 outdir = 'data_quandl/'
-dow.to_csv(outdir + 'dow.csv')
-wti.to_csv(outdir + 'wti.csv')
-fedrate.to_csv(outdir + 'fedrate.csv')
-usdclp.to_csv(outdir + 'usdclp.csv')
-money.to_csv(outdir + 'money.csv')
-debt.to_csv(outdir + 'debt.csv')
+# Opciones escrituda de archivos csv
+karg_csv = dict(sep=';', decimal=',')
+dow.to_csv(outdir + 'dow.csv', **karg_csv)
+wti.to_csv(outdir + 'wti.csv', **karg_csv)
+fedrate.to_csv(outdir + 'fedrate.csv', **karg_csv)
+usdclp.to_csv(outdir + 'usdclp.csv', **karg_csv)
+money.to_csv(outdir + 'money.csv', **karg_csv)
+debt.to_csv(outdir + 'debt.csv', **karg_csv)
 
 print "[INFO]--" + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "--" + "get_quandl" + "--" + "DONE"
