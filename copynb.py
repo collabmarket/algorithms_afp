@@ -20,7 +20,7 @@ def nbexec(nb_base, nb):
     u = aux['cells'][2]['source'].replace(base_name, afp_name)
     aux['cells'][2]['source'] = u
     # Opciones
-    ep = ExecutePreprocessor(timeout=600)
+    ep = ExecutePreprocessor(timeout=300)
     # Procesa aux (Revisar si preprocess modifica aux)
     ep.preprocess(aux, {})
     # Escribe nb destino
