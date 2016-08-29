@@ -14,7 +14,7 @@ def nbexec(nb_base, nb):
     base_name = nb_base.split('_')[1].split('.')[0].upper()
     afp_name = nb.split('_')[1].split('.')[0].upper()
     # Lee nb_base origen
-    with io.open(nb_base, 'rt') as f:
+    with io.open(nb_base, 'rt', encoding="utf8") as f:
         aux = nbformat.read(f, as_version=4)
     # Reemplaza afp_name
     u = aux['cells'][2]['source'].replace(base_name, afp_name)
@@ -24,7 +24,7 @@ def nbexec(nb_base, nb):
     # Procesa aux (Revisar si preprocess modifica aux)
     ep.preprocess(aux, {})
     # Escribe nb destino
-    with io.open(nb, 'wt') as f:
+    with io.open(nb, 'wt', encoding="utf8") as f:
         nbformat.write(aux, f)
     print "[INFO]--" + datetime.now().strftime('%Y-%M-%d %H:%M:%S') + "--" + "nbexec" + "--" + nb
 
